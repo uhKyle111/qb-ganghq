@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Gang HQ Dashboard</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="hidden">
+    <div id="dashboard">
+      <!-- Top Header -->
+      <header class="dashboard-header">
+        <div class="brand">
+          <i class="fas fa-user-secret" aria-hidden="true"></i>
+          <span>Gang HQ</span>
+        </div>
+        <button class="btn-close" title="Close Dashboard" aria-label="Close Dashboard">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </header>
+
+      <!-- Main Body -->
+      <div class="dashboard-body">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+          <nav>
+            <ul>
+              <li class="nav-link active" data-target="overview" tabindex="0">
+                <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                <span>Overview</span>
+              </li>
+              <li class="nav-link" data-target="members" tabindex="0">
+                <i class="fas fa-user-friends" aria-hidden="true"></i>
+                <span>Members</span>
+              </li>
+              <li class="nav-link" data-target="missions" tabindex="0">
+                <i class="fas fa-tasks" aria-hidden="true"></i>
+                <span>Missions</span>
+              </li>
+              <li class="nav-link" data-target="businesses" tabindex="0">
+                <i class="fas fa-industry" aria-hidden="true"></i>
+                <span>Businesses</span>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+          <!-- Overview Section -->
+          <section id="overview" class="content-section active" aria-labelledby="overview-title">
+            <h2 id="overview-title">Gang Overview</h2>
+            <div class="card-group">
+              <div class="card stat-card">
+                <h3>Gang</h3>
+                <p id="gang-name">Loading...</p>
+              </div>
+              <div class="card stat-card">
+                <h3>Funds</h3>
+                <p id="gang-funds">$0</p>
+              </div>
+              <div class="card stat-card">
+                <h3>Reputation</h3>
+                <p id="gang-rep">0</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Members Section -->
+          <section id="members" class="content-section" aria-labelledby="members-title">
+            <h2 id="members-title">Gang Members</h2>
+            <div class="card list-card">
+              <ul id="members-list" aria-live="polite"></ul>
+            </div>
+          </section>
+
+          <!-- Missions Section -->
+          <section id="missions" class="content-section" aria-labelledby="missions-title">
+            <h2 id="missions-title">Missions</h2>
+            <div class="mission-container">
+              <div class="mission-details">
+                <span>Objective: <span id="mission-objective">Waiting for mission...</span></span>
+                <span>Time Remaining: <span id="mission-timer">--:--</span></span>
+                <span>Description: <span id="mission-description">...</span></span>
+                <span>Item to Deliver: <span id="mission-item">No item assigned</span></span>
+              </div>
+              <button id="start-mission" class="start-mission-btn">Start Mission</button>
+              <button id="complete-mission" class="complete-mission-btn hidden">Complete Mission</button>
+              <div class="mission-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+            </div>
+          </section>
+
+          <!-- Businesses Section -->
+          <section id="businesses" class="content-section" aria-labelledby="businesses-title">
+            <h2 id="businesses-title">Business Operations</h2>
+            <div class="card list-card">
+              <ul id="business-list" aria-live="polite"></ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
